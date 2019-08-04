@@ -1,0 +1,262 @@
+@font-face {
+    font-family: destroy;
+    src: url("../typo/DESTROY_.TTF") format('truetype');
+}
+  @font-face {
+    font-family: mayan;
+    src: url("../typo/MAYAN.TTF") format('truetype');
+  }
+  @font-face {
+      font-family: blood;
+      src: url("../typo/BLOODY.TTF");
+  }
+body{
+    margin:0;
+}
+.sacrificio{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 258px;
+    right: 170px;
+    opacity: 0.5;filter: drop-shadow(2px 4px 6px black);
+}
+.sacrificio #brazo{
+animation: sacrificio1 0.4s ease-in-out alternate infinite;
+position: absolute;
+z-index: 2;
+
+}
+
+.sacrificio img{
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    }
+.sacrificio #cuerpo{
+    z-index: 9;
+    position: absolute;
+}
+@keyframes sacrificio1{
+    0%{
+        transform:rotate(35deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+#cnt{
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 1024px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#btn{
+    position: absolute;
+    bottom: 120px;
+    left: 86px;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 0;
+    font-family: mayan;
+    color: rgb(20, 37, 31);
+    background-repeat: no-repeat;
+    font-size: 83px;
+    transition: all 0.5s;
+    transform: rotate3d(21, -3, -1, 45deg);
+    background: transparent;
+    border: none;
+
+    text-shadow: #fff 1px 1px 57px;
+}
+#btn:hover{
+    text-shadow: #bbcfc6 1px 1px 5px;
+    transition: all 0.5s;
+}
+.bg-sacrificio{
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+#holog-cnt{
+    left: 415px;
+    position: absolute;
+    top: 14%;
+}
+#holog-cnt:before{
+    content: "";
+    width: 30px;
+    height: 10px;
+    background: #fff;
+    border-radius: 5px;
+    filter: blur(15px);
+    box-shadow: #fff 90px 52px 10px;
+    display: block;
+    left: -75px;
+    right: 0;
+    top: 90px;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    animation: ballsMoving 60s infinite ease-in-out alternate; 
+    opacity: 0.5;
+}
+#holog-cnt:after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 5px;
+    filter: blur(15px);
+    box-shadow: #fff -110px 52px 10px;
+    display: block;
+    left: 141px;
+    right: 0;
+    top: 90px;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    animation: ballsMoving 60s infinite ease-in-out alternate-reverse; 
+    opacity: 0.5;
+}
+#holograma{
+    width: 340px;
+    height: 300px;
+    display: block;
+    background-size: contain;
+    opacity: 0;
+    transition:opacity 2s;
+}
+#holograma.active{
+    opacity: 0.8;
+    transition:opacity 2s;
+}
+#decapitado{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    font-size: 40px;
+    text-align: center;
+    font-family: destroy;
+    color:#64898f;
+    text-shadow: #fff 1px 1px 57px;
+
+}
+.btn-maya *{
+    position: absolute;
+    transform-origin: center;
+    opacity: 0.4;
+}
+
+
+.stage2{
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes ballsMoving {    
+    0% {        
+    box-shadow: #fff -110px 52px 0px;
+    left: -11px;
+    top: 90px;
+    }
+    10% {
+        box-shadow: #fff 310px -21px 10px;
+        left: -71px;
+        top:20px;
+        transform: rotate(0deg);
+        top: 20px;
+    }
+    25% {        
+        box-shadow: #fff 91px 51px 5px;
+        left: -61px;
+        transform: rotate(45deg);
+        top: 70px;
+    }
+    50% {        
+        box-shadow: #fff -151px 101px 20px;
+        left: 141px;
+        transform: rotate(-95deg);
+        top: 50px;
+    }
+    100% { 
+        box-shadow: #fff -210px -152px 15px;
+        left: -150px;
+        transform: rotate(300deg);
+        top: 90px;
+    }
+}
+
+.Panel_decapitados{
+    float: left;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+}
+.bgmuertos{
+
+    background-image: url(../img/rip.jpg);
+    background-size: 100% ;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    width: 1024px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.contenedor{
+    position: absolute;
+    height: 300px;
+    border: 3px;
+    overflow: hidden;
+    width: 1024px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -50px;
+
+}
+.contenedor .comun span{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    color: red;
+    text-align: center;
+    font-family: blood;
+}
+.comun {
+    width: 8.333%;
+    height: 48%;
+    border: 1px;
+    border-color: black;
+    float: left;
+    position: relative;
+
+  
+}
+
+.comun img {
+    width: 100%;
+    height: auto;
+}
+
+ object-fit: cover{
+    .comun img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
