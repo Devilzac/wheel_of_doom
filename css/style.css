@@ -72,6 +72,8 @@ z-index: 2;
     border: none;
 
     text-shadow: #fff 1px 1px 57px;
+    animation: btnwave 5s infinite ease-in-out alternate-reverse; 
+    
 }
 #btn:hover{
     text-shadow: #bbcfc6 1px 1px 5px;
@@ -164,6 +166,14 @@ z-index: 2;
     opacity: 1;
 }
 
+@keyframes btnwave {
+    0%{        
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
 @keyframes ballsMoving {    
     0% {        
     box-shadow: #fff -110px 52px 0px;
