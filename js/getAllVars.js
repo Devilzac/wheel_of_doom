@@ -1,4 +1,14 @@
 var nombres = ["Alexandro", "Arnau", "Camilo", "Carlos", "Delfina", "Enric", "Erik", "Ferran", "Franco", "Janina", "Jason", "Kavan", "Manuela", "Nathalia", "Nellay", "Noelia", "Nuria", "Raul", "Sergi", "Shuangjie", "Solomon", "Unai", "Andres", "Thierry"];
+//var users=[];
+/*for (let index = 0; index < nombres.length; index++) {
+     users.push({
+        name: nombres[index],
+        dead: Math.round(Math.random())
+    });
+    
+}
+
+console.log(JSON.stringify(users));*/
 var decapitados = [];
 var reducirVelocidad;
 var valorRandom;
