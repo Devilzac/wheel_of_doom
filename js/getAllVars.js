@@ -1,5 +1,5 @@
-var nombres = ["Alexandro", "Arnau", "Camilo", "Carlos", "Delfina", "Enric", "Erik", "Ferran", "Franco", "Janina", "Jason", "Kavan", "Manuela", "Nathalia", "Nellay", "Noelia", "Nuria", "Raul", "Sergi", "Shuangjie", "Solomon", "Unai", "Andres", "Thierry"];
-//var users=[];
+var nombres;
+var users=[];
 /*for (let index = 0; index < nombres.length; index++) {
      users.push({
         name: nombres[index],
@@ -9,6 +9,24 @@ var nombres = ["Alexandro", "Arnau", "Camilo", "Carlos", "Delfina", "Enric", "Er
 }
 
 console.log(JSON.stringify(users));*/
+fetch('http://www.mocky.io/v2/5d4d3d5c330000e73b3376c0').then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        nombres =data;
+        console.log(nombres);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
 var decapitados = [];
 var reducirVelocidad;
 var valorRandom;
@@ -31,6 +49,7 @@ function startVars(){
     sonidoBtn.volume = 1;
     holograma = document.getElementById("holograma");
     resultado = document.getElementById("decapitado");
+    lapida();
 
 }
 

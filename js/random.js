@@ -1,4 +1,3 @@
-
 function killRamdonPerson() {
     activateHologram();
     startExecutionSound();
@@ -6,7 +5,7 @@ function killRamdonPerson() {
         resultado.innerHTML = "No hay mas TPP!!!!";
     if (nombres.length > 0) {
         valorRandom = getRandomNumber();
-        resultado.innerHTML = nombres[valorRandom];
+        resultado.innerHTML = nombres[valorRandom].name;
     }
 
     if (contador < nombres.length) {
@@ -15,29 +14,32 @@ function killRamdonPerson() {
         contador++;
         setTimeout(killRamdonPerson, reducirVelocidad);
     } else {
-        parar();
+        losMuertosNoHablan(valorRandom);
         deactivateHologram();
     }
 }
 
-function parar() {
+function losMuertosNoHablan(val) {
+  
+    nombres[val].dead = 1;
+    contador = 0;
+    reducirVelocidad = 10;
+    lapida();
+    enableBtn()
+    stopExecutionSound();
+    
+}
+function lapida(){
+    piedraConNombre.innerHTML="";
 
-    if (!decapitados.includes(nombres[valorRandom]) && nombres.length > 0) {
-        decapitados.push(nombres[valorRandom]);
-        contador = 0;
-        reducirVelocidad = 10;
+    for (var y = 0; y < nombres.length; y++) {
 
-        for (var i = 0; i < nombres.length; i++) {
-            if (nombres[i] === nombres[valorRandom]) {
-                nombres.splice(i, 1);
-            }
+        if(nombres[y].dead == 1){
+            piedraConNombre.innerHTML+="<div class='comun'><img src='./img/RIP1.png'><span>"+nombres[y].name+"</span></div>";
         }
-       // lapida();
-        enableBtn()
-        stopExecutionSound();
 
-    } else {
-        contador = 0;
-        killRamdonPerson();
+        if(nombres[y].dead == 0){
+            piedraConNombre.innerHTML+="<div class='comun'><img src='./img/rip.png.png'></div>";
+        }
     }
 }
