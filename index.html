@@ -16,6 +16,9 @@
         <audio id="audiofondo" autoplay loop onplay="volumein(this)">
         <source src="./audio/ambiental cueva.mp3" type="audio/mpeg">
         </audio>
+    <?php
+    include "./funtions/contect.php";
+    ?>
     
     <main>
 

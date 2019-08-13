@@ -13,30 +13,30 @@ CREATE TABLE `doom_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-INSERT INTO `wheel` (`user_id`, `name`, `dead`) VALUES
-(4, 'Alexandro', 0),
-(5, 'Arnau', 0),
-(6, 'Camilo', 0),
-(7, 'Carlos', 0),
-(8, 'Delfina', 0),
-(9, 'Enric', 0),
-(10, 'Erik', 0),
-(11, 'Ferran', 0),
-(12, 'Franco', 0),
-(13, 'Janina', 0),
-(14, 'Jason', 0),
-(15, 'Kavan', 0),
-(16, 'Manuela', 0),
-(17, 'Nathalia', 0),
-(18, 'Nellay', 0),
-(19, 'Noelia', 0),
-(20, 'Nuria', 0),
-(21, 'Raul', 0),
-(22, 'Sergi', 0),
-(23, 'Shuangjie', 0),
-(24, 'Unai', 0),
-(25, 'Andres', 0),
-(26, 'Thierry', 0);
+INSERT INTO `doom_users` (`user_id`, `name`, `dead`) VALUES
+(1, 'Alexandro', 0),
+(2, 'Arnau', 0),
+(3, 'Camilo', 0),
+(4, 'Carlos', 0),
+(5, 'Delfina', 0),
+(6, 'Enric', 0),
+(7, 'Erik', 0),
+(8, 'Ferran', 0),
+(9, 'Franco', 0),
+(10, 'Janina', 0),
+(11, 'Jason', 0),
+(12, 'Kavan', 0),
+(13, 'Manuela', 0),
+(14, 'Nathalia', 0),
+(15, 'Nellay', 0),
+(16, 'Noelia', 0),
+(17, 'Nuria', 0),
+(18, 'Raul', 0),
+(19, 'Sergi', 0),
+(20, 'Shuangjie', 0),
+(21, 'Unai', 0),
+(22, 'Andres', 0),
+(23, 'Thierry', 0);
 
 
 ALTER TABLE `doom_users`
