@@ -7,7 +7,7 @@ function checkDB(){
         },
     url: "../functions/connect.php",
     data: {
-        example: "kavan"    
+        example: resultado.textContent
     },
     success: function( data ) {
         console.log(data);
@@ -19,7 +19,8 @@ function killRamdonPerson() {
     activateHologram();
     startExecutionSound();
 
-        resultado.innerHTML = "No hay mas TPP!!!!";
+    resultado.innerHTML = "No hay mas TPP!!!!";
+    resultado.innerHTML = "Kavan";
     /*if (nombres.length > 0) {
         valorRandom = getRandomNumber();
         resultado.innerHTML = nombres[valorRandom].name;
