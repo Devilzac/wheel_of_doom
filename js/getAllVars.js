@@ -1,15 +1,15 @@
 var nombres;
 var users=[];
-/*for (let index = 0; index < nombres.length; index++) {
+/*
+for (let index = 0; index < nombres.length; index++) {
      users.push({
         name: nombres[index],
         dead: Math.round(Math.random())
     });
     
-}
-
-console.log(JSON.stringify(users));*/
-fetch('http://www.mocky.io/v2/5d4d3d5c330000e73b3376c0').then(
+}*/
+//'http://www.mocky.io/v2/5d4d3d5c330000e73b3376c0'
+/*fetch("").then(
     function(response) {
       if (response.status !== 200) {
         console.log('Looks like there was a problem. Status Code: ' +
@@ -26,7 +26,10 @@ fetch('http://www.mocky.io/v2/5d4d3d5c330000e73b3376c0').then(
   )
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
-  });
+  });*/
+ 
+
+
 var decapitados = [];
 var reducirVelocidad;
 var valorRandom;
@@ -37,7 +40,11 @@ var piedraConNombre;
 var sonidoBtn;
 var holograma;
 var resultado;
+var testdata;
 
+$(document).ready(function () {
+  startVars();
+});
 function startVars(){
     reducirVelocidad = 10;
     valorRandom;
@@ -48,7 +55,7 @@ function startVars(){
     sonidoBtn = document.getElementById("play");
     sonidoBtn.volume = 1;
     holograma = document.getElementById("holograma");
-    resultado = document.getElementById("decapitado");
+    resultado = document.getElementById("decapitado");    
     lapida();
 
 }

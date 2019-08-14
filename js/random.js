@@ -1,9 +1,26 @@
+
+function checkDB(){
+    console.log(resultado);
+    $.ajax({
+        accepts: {
+          mycustomtype: 'application/x-some-custom-type'
+        },
+    url: "../functions/connect.php",
+    data: {
+        example: "kavan"    
+    },
+    success: function( data ) {
+        console.log(data);
+    }
+    });
+}
+
 function killRamdonPerson() {
     activateHologram();
     startExecutionSound();
 
         resultado.innerHTML = "No hay mas TPP!!!!";
-    if (nombres.length > 0) {
+    /*if (nombres.length > 0) {
         valorRandom = getRandomNumber();
         resultado.innerHTML = nombres[valorRandom].name;
     }
@@ -16,7 +33,8 @@ function killRamdonPerson() {
     } else {
         losMuertosNoHablan(valorRandom);
         deactivateHologram();
-    }
+    }*/
+    checkDB();
 }
 
 function losMuertosNoHablan(val) {
@@ -25,14 +43,14 @@ function losMuertosNoHablan(val) {
     contador = 0;
     reducirVelocidad = 10;
     lapida();
-    enableBtn()
+    enableBtn();
     stopExecutionSound();
     
 }
 function lapida(){
     piedraConNombre.innerHTML="";
 
-    for (var y = 0; y < nombres.length; y++) {
+    /*for (var y = 0; y < nombres.length; y++) {
 
         if(nombres[y].dead == 1){
             piedraConNombre.innerHTML+="<div class='comun'><img src='./img/RIP1.png'><span>"+nombres[y].name+"</span></div>";
@@ -41,5 +59,5 @@ function lapida(){
         if(nombres[y].dead == 0){
             piedraConNombre.innerHTML+="<div class='comun'><img src='./img/rip.png.png'></div>";
         }
-    }
+    }*/
 }
