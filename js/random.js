@@ -1,29 +1,38 @@
 
 function checkDB(){
-    console.log(resultado);
     $.ajax({
-        accepts: {
-          mycustomtype: 'application/x-some-custom-type'
-        },
-    url: "../functions/connect.php",
+    url: "../wheel_of_doom/functions/connect.php",
     data: {
-        example: resultado.textContent
-    },
+            user_id: "user_id",
+            name: "name",
+            dead: "dead"
+        },
     success: function( data ) {
-        console.log(data);
-    }
+        console.log("data== ",data);
+       
+       
+
+        nombres = JSON.parse(data);
+            lapida();
+        console.log(nombres[0].name);
+        }
     });
 }
 
+    
 function killRamdonPerson() {
     activateHologram();
     startExecutionSound();
 
     resultado.innerHTML = "No hay mas TPP!!!!";
-    resultado.innerHTML = "Kavan";
-    /*if (nombres.length > 0) {
+    console.log(nombres);
+    if (nombres.length > 0) {
         valorRandom = getRandomNumber();
-        resultado.innerHTML = nombres[valorRandom].name;
+
+        if(nombres[valorRandom].dead=0){
+                 resultado.innerHTML = nombres[valorRandom].name;    
+        }
+       
     }
 
     if (contador < nombres.length) {
@@ -34,13 +43,12 @@ function killRamdonPerson() {
     } else {
         losMuertosNoHablan(valorRandom);
         deactivateHologram();
-    }*/
-    checkDB();
+    }
 }
 
 function losMuertosNoHablan(val) {
   
-    nombres[val].dead = 1;
+    nombres[val].dead = "1";
     contador = 0;
     reducirVelocidad = 10;
     lapida();
@@ -51,7 +59,7 @@ function losMuertosNoHablan(val) {
 function lapida(){
     piedraConNombre.innerHTML="";
 
-    /*for (var y = 0; y < nombres.length; y++) {
+    for (var y = 0; y < nombres.length; y++) {
 
         if(nombres[y].dead == 1){
             piedraConNombre.innerHTML+="<div class='comun'><img src='./img/RIP1.png'><span>"+nombres[y].name+"</span></div>";
@@ -60,5 +68,5 @@ function lapida(){
         if(nombres[y].dead == 0){
             piedraConNombre.innerHTML+="<div class='comun'><img src='./img/rip.png.png'></div>";
         }
-    }*/
+    }
 }
