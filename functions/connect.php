@@ -10,7 +10,7 @@ if (mysqli_connect_errno())
   if(isset($_GET["name"])){
     $nombreMuerto = $_GET["name"];
   }
-  $sql = "SELECT * FROM `doom_users` WHERE name = $nombreMuerto";
+  $sql = "SELECT * FROM `user` WHERE name = $nombreMuerto";
 $result = $con->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row

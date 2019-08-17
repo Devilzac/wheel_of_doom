@@ -8,13 +8,13 @@ function checkDB(){
             dead: "dead"
         },
     success: function( data ) {
-        console.log("data== ",data);
+      //  console.log("data== ",data);
        
        
 
         nombres = JSON.parse(data);
             lapida();
-        console.log(nombres[0].name);
+      //  console.log(nombres[0].name);
         }
     });
 }
@@ -26,21 +26,21 @@ function killRamdonPerson() {
 
     resultado.innerHTML = "No hay mas TPP!!!!";
     console.log(nombres);
-    if (nombres.length > 0) {
         valorRandom = getRandomNumber();
 
         if(nombres[valorRandom].dead=0){
                  resultado.innerHTML = nombres[valorRandom].name;    
         }
-       
-    }
+    
 
     if (contador < nombres.length) {
         dissableBtn();
         reducirVelocidad += 10;
         contador++;
+        console.log("contador = ", contador);
         setTimeout(killRamdonPerson, reducirVelocidad);
-    } else {
+    } 
+    if(contador >= nombres.length) {
         losMuertosNoHablan(valorRandom);
         deactivateHologram();
     }
