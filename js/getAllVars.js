@@ -1,8 +1,6 @@
 var nombres=[];
-
-
-
 var decapitados = [];
+
 var reducirVelocidad;
 var valorRandom;
 var contador;
@@ -18,7 +16,7 @@ $(document).ready(function () {
   startVars();
 });
 function startVars(){
-    reducirVelocidad = 10;
+    reducirVelocidad = 50;
     valorRandom;
     contador = 0;
     btn = document.getElementById("btn");
@@ -28,13 +26,15 @@ function startVars(){
     sonidoBtn.volume = 1;
     holograma = document.getElementById("holograma");
     resultado = document.getElementById("decapitado");    
-    checkDB();
+    getAllUsers("getAllUsers");
+    getDeadPeople("getAllDeadUsers");
 
 }
 
 
 function getRandomNumber(){
-    return Math.floor(Math.random() * nombres.length);
+    
+    return Math.floor(Math.random() * (decapitados.length-1));
 }
 function activateHologram(){
     holograma.classList.add("active");
