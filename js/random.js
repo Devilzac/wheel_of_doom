@@ -107,5 +107,6 @@ function lapida(){
         }
     }
     deactivateHologram();
+    $("html, body").delay(2000).animate({scrollTop: $('#cnt-lapida').offset().top }, 2000);
     getDeadPeople("getAllDeadUsers");
 }
