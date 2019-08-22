@@ -10,12 +10,6 @@
     }
 }
 
-
-
-
-
-
-
 function getAllUsers(){
   $con = mysqli_connect("localhost","root","","wheel");  
   // Check connection  
@@ -23,7 +17,7 @@ function getAllUsers(){
     {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }   
-  $sql0 = "SELECT * FROM user";
+  $sql0 = "SELECT * FROM doom_users";
  // echo $sql0;
   
   $result = $con->query($sql0);
@@ -51,7 +45,7 @@ function getAllDeadUsers(){
     {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }   
-  $sql1 = "SELECT * FROM user WHERE dead=0";
+  $sql1 = "SELECT * FROM doom_users WHERE dead=0";
 //echo $sql1;
 
   $result = $con->query($sql1);
@@ -78,7 +72,7 @@ function updateUser($name){
     {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }   
-  $sql2 = "UPDATE user SET dead=1 WHERE name='$name'";
+  $sql2 = "UPDATE doom_users SET dead=1 WHERE name='$name'";
   echo $sql2;
   if(mysqli_query($con, $sql2)){
     echo "Records were updated successfully.";
@@ -96,7 +90,7 @@ function resetDead(){
         {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }   
-      $sql4 = "UPDATE user SET dead=0";
+      $sql4 = "UPDATE doom_users SET dead=0";
       echo $sql4;
       if(mysqli_query($con, $sql4)){
         echo "Dead people were reseted successfully.";

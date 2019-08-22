@@ -23,7 +23,7 @@ function updateDead(dato){
           getUsersOrUpdate: dato
         },
     success: function( data ) {
-      //  console.log("update: ", data);
+      // console.log("update: ", data);
        getAllUsers("getAllUsers");
         }
     });
@@ -37,6 +37,7 @@ function getAllUsers(dato){
           getUsersOrUpdate: dato
         },
     success: function( data ) {
+        //console.log(data);
         nombres = JSON.parse(data);
         lapida();
         }
@@ -87,8 +88,6 @@ function losMuertosNoHablan(val) {
    // console.log("name == ", name);    
     updateDead(name);
 
-    contador = 0;
-    reducirVelocidad = 10;
     enableBtn();
     stopExecutionSound();
     
@@ -107,6 +106,6 @@ function lapida(){
         }
     }
     deactivateHologram();
-    $("html, body").delay(2000).animate({scrollTop: $('#cnt-lapida').offset().top }, 2000);
+  //  $("html, body").delay(2000).animate({scrollTop: $('#cnt-lapida').offset().top }, 2000);
     getDeadPeople("getAllDeadUsers");
 }

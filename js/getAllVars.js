@@ -1,5 +1,5 @@
 var nombres=[];
-var decapitados = [];
+var decapitados=[];
 
 var reducirVelocidad;
 var valorRandom;
